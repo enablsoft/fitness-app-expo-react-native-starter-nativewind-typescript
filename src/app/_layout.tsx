@@ -1,10 +1,11 @@
 import "../global.css";
-import { Stack } from "expo-router";
+import { ClerkProvider } from '@clerk/clerk-expo'
+import { Slot, Stack } from "expo-router";
 
 export default function Layout() {
   return (
-    <Stack>
-      <Stack.Screen name="(app)" options={{ headerShown: false }} />
-    </Stack>
+    <ClerkProvider>
+        <Slot />
+    </ClerkProvider>
   );
 }

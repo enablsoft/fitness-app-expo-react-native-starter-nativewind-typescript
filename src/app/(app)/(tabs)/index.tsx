@@ -4,7 +4,7 @@ import { SafeAreaView, Text, View } from "react-native";
 
 export default function Page() {
   return (
-    <SafeAreaView className="flex flex-1">
+    <SafeAreaView className="flex flex-1 mt-5">
       <Header />
       <Content />
     </SafeAreaView>
