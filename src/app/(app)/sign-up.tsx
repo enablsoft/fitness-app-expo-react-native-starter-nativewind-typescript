@@ -67,7 +67,7 @@ export default function SignUpScreen() {
 
   if (pendingVerification) {
     return (
-      <SafeAreaView>
+      <SafeAreaView className='flex-1 bg-gray-50 mt-5'>
         <KeyboardAvoidingView
           behavior={Platform.OS === "ios" ? "padding" : "height"}
           className='flex-1'
@@ -80,6 +80,18 @@ export default function SignUpScreen() {
           />
           <TouchableOpacity onPress={onVerifyPress}>
             <Text>Verify</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            onPress={() => {
+              setPendingVerification(false)
+              setCode('')
+            }}
+            className='py-2'
+          >
+            <Text className='text-blue-600 font-medium text-center'>
+              Back to Sign Up
+            </Text>
           </TouchableOpacity>
         </KeyboardAvoidingView>
       </SafeAreaView>
