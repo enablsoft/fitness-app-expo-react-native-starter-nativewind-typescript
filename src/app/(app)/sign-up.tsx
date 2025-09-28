@@ -67,17 +67,22 @@ export default function SignUpScreen() {
 
   if (pendingVerification) {
     return (
-      <>
-        <Text>Verify your email</Text>
-        <TextInput
-          value={code}
-          placeholder="Enter your verification code"
-          onChangeText={(code) => setCode(code)}
-        />
-        <TouchableOpacity onPress={onVerifyPress}>
-          <Text>Verify</Text>
-        </TouchableOpacity>
-      </>
+      <SafeAreaView>
+        <KeyboardAvoidingView
+          behavior={Platform.OS === "ios" ? "padding" : "height"}
+          className='flex-1'
+        >
+          <Text>Verify your email</Text>
+          <TextInput
+            value={code}
+            placeholder="Enter your verification code"
+            onChangeText={(code) => setCode(code)}
+          />
+          <TouchableOpacity onPress={onVerifyPress}>
+            <Text>Verify</Text>
+          </TouchableOpacity>
+        </KeyboardAvoidingView>
+      </SafeAreaView>
     )
   }
 

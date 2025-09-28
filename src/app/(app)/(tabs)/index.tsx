@@ -1,6 +1,7 @@
-import { Link } from "expo-router";
+import { Link, useRouter } from "expo-router";
 import React from "react";
-import { SafeAreaView, Text, View } from "react-native";
+import { SafeAreaView, Text, TouchableOpacity, View } from "react-native";
+import {useAuth} from "@clerk/clerk-expo"
 
 export default function Page() {
   return (
@@ -63,6 +64,26 @@ function Content() {
                 Join My Course & Learn to Code with AI 💚 (1000+ Students)
               </Link>
             </View>
+
+            {/* Clerk Sign Out Button */}
+            {(() => {
+              const { signOut } = useAuth();
+              const router = useRouter();
+              const handleSignOut = async () => {
+                try {
+                  await signOut();
+                  router.replace("/sign-in");
+                } catch (error) {
+                  console.error("Sign out failed:", error);
+                }
+              };
+              return (
+                <TouchableOpacity onPress={handleSignOut}>
+                  <Text className="text-red-600 font-semibold text-lg">Sign Out</Text>
+                </TouchableOpacity>
+              );
+            })()}
+            
           </View>
         </View>
       </View>
