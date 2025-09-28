@@ -3,6 +3,7 @@ import { Link, useRouter } from 'expo-router'
 import { KeyboardAvoidingView, Platform, SafeAreaView, Text, TextInput, TouchableOpacity, View } from 'react-native'
 import React from 'react'
 import { Ionicons } from "@expo/vector-icons"
+import GoogleSignIn from './components/GoogleSignIn'
 
 export default function Page() {
     const { signIn, setActive, isLoaded } = useSignIn()
@@ -50,8 +51,8 @@ export default function Page() {
                     {/** Header section */}
                     <View className='flex-1 justify-center'>
                         <View className='items-center mb-8'>
-                            <View className='w-20 h-20 bg-gradient-to-br from-blue-800 to-pink-600 rounded-2xl items-center justify-center md-4 shadow-lg bg-white mb-2'>
-                                <Ionicons name="fitness" size={40} color="black" />
+                            <View className='w-20 h-20 bg-gradient-to-br from-blue-800 to-pink-600 rounded-2xl items-center justify-center md-4 shadow-lg bg-gray-900 mb-3'>
+                                <Ionicons name="fitness" size={40} color="white" />
                             </View>
                             <Text className='text-3xl font-bold text-gray-900 mb-2'>
                                 FitTracker
@@ -106,7 +107,7 @@ export default function Page() {
                             </View>
                         </View>
 
-                        {/** Password Input */}
+                        {/** Sign In Input */}
                         <TouchableOpacity
                             onPress={onSignInPress}
                             disabled={isLoading}
@@ -123,7 +124,6 @@ export default function Page() {
                                     {isLoading ? "Signing In..." : "Sign In"}
                                 </Text>
                             </View>
-                            {/* <Text>Continue</Text> */}
                         </TouchableOpacity>
 
                         {/** Divider */}
@@ -134,7 +134,17 @@ export default function Page() {
                         </View>
 
                         {/** Google Sign In Button */}
-                        {/* <GoogleSignIn /> */}
+                        <GoogleSignIn />
+
+                        {/** Sign Up Link */}
+                        <View className='flex-row justify-center items-center mt-4'>
+                            <Text className='text-gray-600'>Don't have an account? </Text>
+                            <Link href="/sign-up" asChild>
+                                <TouchableOpacity>
+                                    <Text className='text-blue-600 font-semibold'>Sign Up</Text>
+                                </TouchableOpacity>
+                            </Link>
+                        </View>
 
                     </View>
 
