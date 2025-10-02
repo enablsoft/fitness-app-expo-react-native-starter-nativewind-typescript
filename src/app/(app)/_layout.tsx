@@ -6,6 +6,8 @@ const Layout = () => {
   const {isLoaded, isSignedIn, userId, sessionId, getToken} = useAuth();
   console.log("isSignedIn >>>",isSignedIn)
 
+  const safeIsSignedIn = isSignedIn === undefined ? false : isSignedIn;
+
   if(!isLoaded){
     return (
       <View className="flex-1 items-center justify-center">
