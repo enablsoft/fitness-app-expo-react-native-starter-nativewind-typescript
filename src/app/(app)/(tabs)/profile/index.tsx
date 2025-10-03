@@ -15,7 +15,7 @@ export default function Page() {
     ]);
   }
   return (
-    <SafeAreaView className="flex flex-1 mt-5">
+    <SafeAreaView className="flex flex-1 pt-5">
       <Text>Profile</Text>
 
       {/**Sign out */}

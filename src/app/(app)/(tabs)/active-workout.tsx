@@ -3,7 +3,7 @@ import React from 'react'
 
 export default function ActiveWorkout() {
   return (
-    <SafeAreaView className='flex-1 mt-5'>
+    <SafeAreaView className='flex-1 pt-5'>
       <Text>ActiveWorkout</Text>
     </SafeAreaView>
   )
