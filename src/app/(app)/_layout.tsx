@@ -4,9 +4,8 @@ import { ActivityIndicator, View } from "react-native";
 
 const Layout = () => {
   const {isLoaded, isSignedIn, userId, sessionId, getToken} = useAuth();
-  console.log("isSignedIn >>>",isSignedIn)
-
   const safeIsSignedIn = isSignedIn === undefined ? false : isSignedIn;
+  console.log("isSignedIn >>>",isSignedIn)
 
   if(!isLoaded){
     return (
