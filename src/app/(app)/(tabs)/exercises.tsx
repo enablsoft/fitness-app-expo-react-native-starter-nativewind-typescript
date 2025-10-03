@@ -4,7 +4,7 @@ import React from 'react'
 export default function Exercises() {
   return (
     <SafeAreaView className='flex-1 mt-5'>
-      <Text>Exercises</Text>
+      <Text>Exercises!</Text>
     </SafeAreaView>
   )
 }
